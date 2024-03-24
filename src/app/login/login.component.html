@@ -1,0 +1,46 @@
+<section class="section">
+  <div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
+      <div class="form-input">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter Your Email"
+          ngModel
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          #email="ngModel"
+        />
+        @if (email.touched && email.invalid && email.errors?.['required']) {
+
+        <small>This Field Is Required</small>
+        } @if (email.errors?.['pattern']) {
+        <small>This Is Not A Valid Email</small>
+        }
+      </div>
+
+      <div class="form-input">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter Your Password"
+          ngModel
+          required
+          #password="ngModel"
+        />
+        @if (password.touched && password.invalid) {
+        <small> This Password Is Not Valid </small>
+        }
+      </div>
+      <button type="submit" class="btn-submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+  </div>
+</section>

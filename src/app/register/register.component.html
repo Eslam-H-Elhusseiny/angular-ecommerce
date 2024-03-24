@@ -1,0 +1,86 @@
+<section class="section">
+  <div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="handlSubmit()">
+      <div class="form-input">
+        <label for="fullname" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullname"
+          placeholder="Enter Your Full Name"
+          formControlName="fullName"
+        />
+        @if (registerForm.controls['fullName'].touched &&
+        registerForm.controls['fullName'].invalid) {
+        <small>This Field Is Required</small>
+        }
+      </div>
+
+      <div class="form-input">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter Your Email"
+          formControlName="email"
+        />
+        @if (registerForm.controls['email'].touched &&
+        registerForm.controls['email'].invalid) {
+        <small>This Field Is Required</small>
+        }
+      </div>
+
+      <div class="form-input">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          placeholder="Enter Your Username"
+          formControlName="username"
+        />
+        @if (registerForm.controls['username'].touched &&
+        registerForm.controls['username'].invalid) {
+        <small> This username Is Not Valid </small>
+        }
+      </div>
+
+      <div class="form-input">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter Your Password"
+          formControlName="password"
+        />
+        @if (registerForm.controls['password'].touched &&
+        registerForm.controls['password'].invalid) {
+        <small> This Password Is Not Valid </small>
+        }
+      </div>
+
+      <div class="form-input">
+        <label for="cpassword" class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="cpassword"
+          placeholder="Confirm Your Password"
+          formControlName="cpassword"
+        />
+        @if (registerForm.controls['password'].touched &&
+        registerForm.controls['password'].invalid) {
+        <small> Please Confirm Your Password </small>
+        } @if (registerForm.controls['password'].value !==
+        registerForm.controls['cpassword'].value) {
+        <small> Password Dosen't Match </small>
+        }
+      </div>
+      <button type="submit" class="btn-submit" (click)="onSubmit()">
+        Register
+      </button>
+    </form>
+  </div>
+</section>

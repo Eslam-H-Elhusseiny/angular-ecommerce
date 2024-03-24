@@ -1,0 +1,20 @@
+<section class="section">
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of cart; track $index) {
+        <app-cart-item></app-cart-item>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

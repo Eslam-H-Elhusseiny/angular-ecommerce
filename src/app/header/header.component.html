@@ -1,0 +1,50 @@
+<header>
+  <!-- Offer Alert -->
+  <div class="offer hide-on-mobile py-1 text-center">
+    <p>New Season Coming! Discount 20% For All Products Check It Out Now!</p>
+  </div>
+
+  <!-- Nav Container -->
+  <div class="nav-contaienr">
+    <!-- NavBar -->
+    <nav class="nav-top py-1">
+      <!-- Container -->
+      <div class="nav container d-flex align-center">
+        <a routerLink="" class="logo">eShop<span class="logo-dot">.</span></a>
+        <div class="buttons">
+          <div class="nav">
+            <ul class="nav-links">
+              <li class="link position-relative pb-1 cursor-pointer">
+                <a
+                  routerLink=""
+                  routerLinkActive="active_link"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  >Home</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="login">
+            <ul class="nav-links">
+              <li class="link position-relative pb-1 cursor-pointer">
+                <a routerLink="login" routerLinkActive="active_link">Login</a>
+              </li>
+
+              <li class="link position-relative pb-1 cursor-pointer">
+                <a routerLink="register" routerLinkActive="active_link"
+                  >Register</a
+                >
+              </li>
+
+              <li class="link position-relative pb-1 cursor-pointer">
+                <a routerLink="cart" routerLinkActive="active_link">
+                  Cart <span>{{ counter }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

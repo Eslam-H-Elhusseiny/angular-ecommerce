@@ -1,0 +1,55 @@
+/* OFFER */
+.offer {
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.nav-top {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.nav {
+  position: relative;
+  font-size: var(--fsize-300);
+}
+
+.logo {
+  padding-bottom: 0.5rem;
+  font-weight: var(--fweight-900);
+  letter-spacing: 3px;
+  font-size: var(--fsize-600);
+}
+
+.logo-dot {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+  margin-inline: 1rem;
+  font-size: var(--fsize-clamp-100);
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+  transition: var(--transition-short);
+}
+
+.nav-links a {
+  padding: 0.5rem;
+}
+
+.active_link {
+  background-color: rgba(235, 182, 102, 0.3);
+  border-radius: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

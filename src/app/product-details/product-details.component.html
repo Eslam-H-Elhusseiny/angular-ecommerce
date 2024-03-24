@@ -1,0 +1,31 @@
+<section class="section">
+  <div class="container details-container">
+    <div class="image">
+      <img [src]="productDetails.thumbnail" alt="" />
+    </div>
+    <div class="flex-container">
+      <div class="details">
+        <h5 class="p-cat">{{ productDetails.category }}</h5>
+        <h2 class="p-title">{{ productDetails.title }}</h2>
+        <p class="p-desc">{{ productDetails.description }}</p>
+        <!-- <span class="p-rating">{{ productDetails.rating }}</span> -->
+        <p-rating
+          [(ngModel)]="productDetails.rating"
+          [readonly]="true"
+          [cancel]="false"
+        >
+        </p-rating>
+        <h3 class="p-price">EGP {{ productDetails.price * 30 }}</h3>
+        @if (productDetails.stock) {
+        <span class="stock stock-green">In Stock</span>
+        } @else {
+        <span class="stock stock-red">Out Of Stock</span>
+        }
+      </div>
+      <div class="btns">
+        <a href="" class="btn btn-buy">Buy Now</a>
+        <a class="btn btn-atc" (click)="addToCart()">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<div class="card px-2 py-2 h-100">
+  <div
+    class="card-product position-relative justify-end d-flex flex-col align-center"
+  >
+    <a [routerLink]="['product-details', productItem.id]">
+      <!-- Product Image -->
+      <img
+        [src]="productItem.thumbnail"
+        alt="{{ productItem.title.slice(0, 24) }}"
+      />
+    </a>
+
+    <button
+      [routerLink]="['product-details', productItem.id]"
+      class="btn addToCart w-85 cursor-pointer d-inline-block"
+    >
+      Add To Cart
+    </button>
+  </div>
+  <div class="card-text px-1 d-flex flex-col">
+    <a [routerLink]="['product-details', productItem.id]">
+      <h3 class="product-h mb-1">{{ productItem.title.slice(0, 24) }}</h3>
+    </a>
+    <p class="product-p mb-3">{{ productItem.description.slice(0, 125) }}</p>
+    @if (productItem.stock) {
+    <span class="stock stock-green">In Stock</span>
+    } @else {
+    <span class="stock stock-red">Out Of Stock</span>
+    }
+    <div class="price-colors my-1 align-center justify-between d-flex">
+      <h4 class="price-tag">
+        <span class="currency">EGP </span>
+        <span class="price">{{ productItem.price * 30 }}</span>
+      </h4>
+      <p-rating
+        [(ngModel)]="productItem.rating"
+        [readonly]="true"
+        [cancel]="false"
+      >
+      </p-rating>
+    </div>
+  </div>
+</div>
